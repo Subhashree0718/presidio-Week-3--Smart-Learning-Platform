@@ -1,0 +1,6 @@
+[
+  { "course_id": 1, "course_title": "Node.js Basics", "course_category": "tech" },
+  { "course_id": 2, "course_title": "React Advanced", "course_category": "tech" },
+  { "course_id": 3, "course_title": "Python for Beginners", "course_category": "tech" },
+  { "course_id": 4, "course_title": "AWS Cloud", "course_category": "cloud" }
+]
