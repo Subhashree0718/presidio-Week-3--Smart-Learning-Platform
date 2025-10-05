@@ -1,0 +1,23 @@
+/* 1. @font-face Definition (Keep this at the top) */
+@font-face{
+    font-family: 'RobotoSlab';
+    src: url('../src/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+    /* IMPORTANT: Add font-weight range for variable fonts if you haven't already */
+    font-weight: 100 900; 
+    font-style: normal;
+    font-display: swap; 
+}
+
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+
+/* 3. CORRECT Global Font Application */
+/* Use @layer base to apply global non-utility styles */
+@layer base {
+    html {
+        /* Apply the font family to the highest-level element */
+        font-family: 'RobotoSlab', serif;
+    }
+}
