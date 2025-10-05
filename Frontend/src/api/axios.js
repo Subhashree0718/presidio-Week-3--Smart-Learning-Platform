@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:4000/api';
+const BASE_URL = 'https://presidio-week-3-smart-learning-platform-1.onrender.com/api';
 export const axiosPublic = axios.create({
     baseURL: BASE_URL,
     headers: { 'Content-Type': 'application/json' },
