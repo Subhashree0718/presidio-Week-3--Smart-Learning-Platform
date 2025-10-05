@@ -19,7 +19,7 @@ const getCourses = async (req, res) => {
     // attach teacher details
     const coursesWithTeacher = await Promise.all(courses.map(async c => {
       try {
-        const teacherRes = await axios.get(`http://localhost:4000/users/${c.teacher_id}`);
+const teacherRes = await axios.get(`${USER_SERVICE_URL}/users/${c.teacher_id}`);
         return {
           ...c,
           teacher: teacherRes.data,

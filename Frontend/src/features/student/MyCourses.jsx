@@ -2,24 +2,31 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import useAuth from '../../hooks/useAuth';
 import { BookMarked, AlertCircle } from 'lucide-react';
+
+const COURSE_SERVICE_URL = import.meta.env.VITE_COURSE_SERVICE_URL;
+
 const MyCourses = () => {
     const { auth } = useAuth();
     const axiosPrivate = useAxiosPrivate();
+
     const { data: enrolledCourses, isLoading, error } = useQuery({
         queryKey: ['myCourses', auth.user.id],
         queryFn: async () => {
-            const response = await axiosPrivate.get(`http://localhost:5000/courses/enrolled/${auth.user.id}`);
+            const response = await axiosPrivate.get(`${COURSE_SERVICE_URL}/courses/enrolled/${auth.user.id}`);
             return response.data;
         },
     });
+
     if (isLoading) return <div>Loading your courses...</div>;
     if (error) return <div>Error fetching your courses.</div>;
+
     const uniqueCourses = enrolledCourses?.reduce((unique, course) => {
         if (!unique.some(item => item.course_id === course.course_id)) {
             unique.push(course);
         }
         return unique;
     }, []) || [];
+
     return (
         <div className="space-y-6">
             <h1 className="text-3xl font-bold flex items-center gap-2">
@@ -46,4 +53,5 @@ const MyCourses = () => {
         </div>
     );
 };
+
 export default MyCourses;
