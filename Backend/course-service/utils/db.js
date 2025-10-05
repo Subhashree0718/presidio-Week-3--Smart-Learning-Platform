@@ -1,12 +1,9 @@
+// db.js
 const { Pool } = require('pg');
-require('dotenv').config();
 
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  connectionString: 'postgresql://smart_learn_user:T2CX4yxF1Bq7BkvV8WZ4N38tqSK0cJ1l@dpg-d3hb9j1r0fns73c8vgbg-a/smart_learn',
+  ssl: { rejectUnauthorized: false }, 
 });
 
 module.exports = pool;
