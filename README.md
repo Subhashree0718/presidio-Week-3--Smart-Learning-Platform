@@ -1,4 +1,4 @@
-# 🎓 Smart Learning Platform — Frontend
+# Smart Learning Platform — Frontend
 
 A modern web app for managing online learning — with role-based access for **Students, Teachers, and Admins**.  
 Built using **React + Tailwind CSS + React Query + Axios** for a responsive, fast, and secure user experience.
