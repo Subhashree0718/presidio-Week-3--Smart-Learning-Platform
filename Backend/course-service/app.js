@@ -11,7 +11,6 @@ const swaggerDocument = require('./swagger/swagger.json');
 
 app.use(cors({
   origin: 'https://presidio-week-3-smart-learning-plat.vercel.app',
-  'http://localhost:5173'
 }));
 
 app.use(express.json());
