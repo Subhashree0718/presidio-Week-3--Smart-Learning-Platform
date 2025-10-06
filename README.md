@@ -6,9 +6,9 @@ Built using **React + Tailwind CSS + React Query + Axios** for a responsive, fas
 ---
 
 ## 🚀 Live Demo
-**Frontend (Vercel):** [https://your-frontend.vercel.app](https://your-frontend.vercel.app)  
-**Backend (Render):** [https://your-backend.onrender.com](https://your-backend.onrender.com)
-
+**Frontend (Vercel):** https://presidio-week-3-smart-learning-plat.vercel.app/ 
+**Backend (Render):** https://presidio-week-3-smart-learning-platform-1.onrender.com
+                      https://presidio-week-3-smart-learning-platform.onrender.com
 ---
 
 ## 🧩 Overview
