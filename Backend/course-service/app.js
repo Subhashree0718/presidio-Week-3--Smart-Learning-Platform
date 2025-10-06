@@ -9,8 +9,22 @@ const courseRoutes = require('./routes/courseRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger/swagger.json');
 
+const allowedOrigins = [
+  'https://presidio-week-3-smart-learning-plat.vercel.app',
+  'http://localhost:5173'
+];
+
 app.use(cors({
-  origin: 'https://presidio-week-3-smart-learning-plat.vercel.app',
+  origin: function(origin, callback){
+    // allow requests with no origin (like Postman)
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
 }));
 
 app.use(express.json());
